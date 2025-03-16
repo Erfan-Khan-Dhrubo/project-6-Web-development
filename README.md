@@ -100,13 +100,13 @@ https://openapi.programming-hero.com/api/words/all
 
 ### Vocabulary Details
 
-- [ ] Create functionality to open a modal when clicking the details icon
-- [ ] Data will be load from **API-03**
-- [ ] modal will displays:
-  - [ ] Word with pronunciation
-  - [ ] Example sentence
-  - [ ] Synonyms
-  - [ ] A "Complete Learning" button to close the modal
+- [#] Create functionality to open a modal when clicking the details icon
+- [#] Data will be load from **API-03**
+- [#] modal will displays:
+  - [#] Word with pronunciation
+  - [#] Example sentence
+  - [#] Synonyms
+  - [#] A "Complete Learning" button to close the modal
 
 ## Challenge Requirements
 

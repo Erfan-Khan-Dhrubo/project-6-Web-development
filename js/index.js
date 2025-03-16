@@ -49,7 +49,7 @@ function loadVocabulary(id) {
             </p>
             <div class="flex justify-between w-full">
                 <div class="p-2 rounded-md bg-[#E8F3FE]">
-                  <button>
+                  <button onclick="vocabularyDetails(${item.id})">
                     <i class="fa-solid fa-circle-info text-xl"></i>
                   </button>
                 </div>
@@ -73,4 +73,34 @@ function removeActive() {
   for (let i of activeBtn) {
     i.classList.remove("active");
   }
+}
+
+//loading Vocabulary Details
+
+function vocabularyDetails(id) {
+  const URL = `https://openapi.programming-hero.com/api/word/${id}`;
+  fetch(URL).then((response) =>
+    response.json().then((info) => loadVocabularyDetails(info.data))
+  );
+}
+
+function loadVocabularyDetails(info) {
+  loadInfo("word", info.word);
+  loadInfo("pronunciation", info.pronunciation);
+  loadInfo("meaning", info.meaning);
+  loadInfo("sentence", info.sentence);
+  const targetId = document.getElementById("synonyms");
+  targetId.innerHTML = "";
+  for (const item of info.synonyms) {
+    const newDiv = document.createElement("div");
+    newDiv.innerHTML = `
+     <p class="text-xl bg-[#EDF7FF] p-2 rounded-lg">${item}</p>`;
+    targetId.append(newDiv);
+  }
+  my_modal_5.showModal();
+}
+
+function loadInfo(id, info) {
+  const data = document.getElementById(id);
+  data.innerText = info;
 }

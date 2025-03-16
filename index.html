@@ -117,6 +117,39 @@
         </div>
       </section>
     </main>
+    <!-- modal -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box text-2xl p-12">
+        <div class="flex flex-col gap-6">
+          <h3 class="text-4xl font-semibold">
+            <span id="word"></span> ( <i class="fa-solid fa-microphone"></i> :
+            <span id="pronunciation"></span> )
+          </h3>
+          <div class="flex flex-col gap-2">
+            <p class="font-semibold">Meaning</p>
+            <p id="meaning" class="font-medium"></p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <p class="font-semibold">Example</p>
+            <p id="sentence"></p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <p class="font-medium">সমার্থক শব্দ গুলো</p>
+            <div id="synonyms" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+        <div class="modal-action flex justify-start">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button
+              class="btn bg-[#422AD5] text-[#FFFFFF] p-6 rounded-lg text-xl mt-8"
+            >
+              Complete Learning
+            </button>
+          </form>
+        </div>
+      </div>
+    </dialog>
     <!-- attaching js file -->
     <script src="js/index.js"></script>
   </body>
