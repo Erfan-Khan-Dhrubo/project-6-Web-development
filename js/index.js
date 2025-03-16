@@ -10,7 +10,7 @@ function displayLesson(lesson) {
   const lessonContainer = document.getElementById("Lesson-container");
   for (const item of lesson) {
     const divContainer = document.createElement("div");
-    divContainer.innerHTML = `<button
+    divContainer.innerHTML = `<button id="btn-${item.level_no}" onclick="loadVocabulary(${item.level_no})"
             class="btn btn-outline btn-primary font-semibold text-base px-6"
           >
             <i
@@ -25,14 +25,19 @@ function displayLesson(lesson) {
 
 loadLesson();
 
-//
+// loading vocabulary when button is pressed
 
-function help() {
-  fetch("https://openapi.programming-hero.com/api/level/1").then((response) =>
+function loadVocabulary(id) {
+  removeActive();
+  const activeBtn = document.getElementById(`btn-${id}`);
+  activeBtn.classList.add("active");
+  const URL = `https://openapi.programming-hero.com/api/level/${id}`;
+  fetch(URL).then((response) =>
     response.json().then((info) => {
       const vocabulariesContainer = document.getElementById(
         "Vocabularies-container"
       );
+      vocabulariesContainer.innerHTML = "";
       for (const item of info.data) {
         const divContainer = document.createElement("div");
         divContainer.innerHTML = `
@@ -61,4 +66,11 @@ function help() {
   );
 }
 
-help();
+// removing active
+
+function removeActive() {
+  const activeBtn = document.getElementsByClassName("active");
+  for (let i of activeBtn) {
+    i.classList.remove("active");
+  }
+}

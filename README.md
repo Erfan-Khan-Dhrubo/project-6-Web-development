@@ -82,11 +82,11 @@ https://openapi.programming-hero.com/api/words/all
 ---
 
 - [ ] Show a default text that will be displayed in the Vocabulary section initially
-- [ ] on Clicking a Specific Lesson Button Load All the words from **API-02**
-- [ ] Display all words for a selected lesson in a card format, showing:
-  - [ ] Word
-  - [ ] Word meaning & pronunciation
-  - [ ] Two buttons with relevant icons as per Figma
+- [#] on Clicking a Specific Lesson Button Load All the words from **API-02**
+- [#] Display all words for a selected lesson in a card format, showing:
+  - [#] Word
+  - [#] Word meaning & pronunciation
+  - [#] Two buttons with relevant icons as per Figma
 
 ---
 
@@ -94,7 +94,7 @@ https://openapi.programming-hero.com/api/words/all
 
 ---
 
-- [ ] Create functionality to highlight the active lesson button
+- [#] Create functionality to highlight the active lesson button
 
 ---
 
