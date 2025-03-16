@@ -132,3 +132,23 @@ function loadHidden(id, remove, add) {
   targetId.classList.remove(remove);
   targetId.classList.add(add);
 }
+
+// smooth scrolling
+
+document.getElementById("btn-fqa").addEventListener("click", function () {
+  document.getElementById("fqa-section").scrollIntoView({
+    behavior: "smooth",
+  });
+});
+
+// handling Logout
+
+document
+  .getElementById("logout-btn")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    loadHidden("voca-section", "dummy-class", "hidden");
+    loadHidden("fqa-section", "dummy-class", "hidden");
+    loadHidden("nav-section", "dummy-class", "hidden");
+    loadHidden("banner_section", "hidden", "dummy-class");
+  });
