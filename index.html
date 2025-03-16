@@ -46,7 +46,11 @@
               <i class="fa-solid fa-circle-question"></i> FAQ
             </button>
             <button class="btn btn-outline btn-primary font-semibold text-base">
-              <i class="fa-solid fa-book-open"></i>Learn
+              <i
+                class="fa-solid fa-book-open"
+                style="transform: rotate(180deg)"
+              ></i
+              >Learn
             </button>
             <button class="btn btn-outline btn-primary font-semibold text-base">
               <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
@@ -82,5 +86,25 @@
         <div><img src="assets/hero-student.png" alt="" /></div>
       </section>
     </header>
+
+    <main>
+      <!-- Vocabulary Section -->
+      <section class="w-9/10 mx-auto">
+        <h2 class="text-center text-4xl font-bold">
+          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+        </h2>
+        <!-- button -->
+        <div
+          id="Lesson-container"
+          class="flex justify-center gap-4 py-12"
+        ></div>
+        <div class="text-center p-12 bg-[#F8F8F8]">
+          <p class="text-base p-4">আপনি এখনো কোন Lesson Select করেন ন</p>
+          <p class="text-4xl">একটি Lesson Select করুন।</p>
+        </div>
+      </section>
+    </main>
+    <!-- attaching js file -->
+    <script src="js/index.js"></script>
   </body>
 </html>
