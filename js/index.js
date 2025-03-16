@@ -104,3 +104,31 @@ function loadInfo(id, info) {
   const data = document.getElementById(id);
   data.innerText = info;
 }
+
+// handling Login
+
+document.getElementById("btn-str").addEventListener("click", function (event) {
+  event.preventDefault();
+  const name = document.getElementById("name").value;
+  const password = document.getElementById("password").value;
+  if (name) {
+    if (password == 123456) {
+      swal("Good job!", "You Have Successfully Login", "success");
+      loadHidden("voca-section", "hidden", "dummy-class");
+      loadHidden("fqa-section", "hidden", "dummy-class");
+      loadHidden("nav-section", "hidden", "dummy-class");
+      loadHidden("banner_section", "dummy-class", "hidden");
+    } else {
+      console.log(password);
+      swal("Invalid Password");
+    }
+  } else {
+    swal("Please Write Your Name");
+  }
+});
+
+function loadHidden(id, remove, add) {
+  const targetId = document.getElementById(id);
+  targetId.classList.remove(remove);
+  targetId.classList.add(add);
+}

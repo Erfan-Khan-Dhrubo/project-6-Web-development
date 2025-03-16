@@ -112,14 +112,14 @@ https://openapi.programming-hero.com/api/words/all
 
 ### Custom Navigation & Smooth scrolling
 
-- [ ] hide everything on landing except the Banner and Footer
-- [ ] Create a functional login form:
-  - [ ] Show an alert if the user does not enter a name
-  - [ ] Show an alert if the password is not "123456"
-- [ ] when the user enters a valid name and password
-  - [ ] Show a success alert,
-  - [ ] hide the Banner
-  - [ ] display the Navbar, Vocabulary Section, and FAQ Section
+- [#] hide everything on landing except the Banner and Footer
+- [#] Create a functional login form:
+  - [#] Show an alert if the user does not enter a name
+  - [#] Show an alert if the password is not "123456"
+- [#] when the user enters a valid name and password
+  - [#] Show a success alert,
+  - [#] hide the Banner
+  - [#] display the Navbar, Vocabulary Section, and FAQ Section
 
 ---
 

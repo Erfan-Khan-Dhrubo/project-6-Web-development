@@ -14,6 +14,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- Adding "Poppins" font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,7 +44,10 @@
   <body class="font-Poppins">
     <header>
       <!-- navbar section -->
-      <nav class="bg-[#F3F3F3] border-2 border-gray-300">
+      <nav
+        id="nav-section"
+        class="bg-[#F3F3F3] border-2 border-gray-300 hidden"
+      >
         <div class="w-9/10 flex mx-auto justify-between py-6">
           <div class="flex items-center gap-1">
             <div class="font-semibold text-xl">English</div>
@@ -66,7 +72,10 @@
         </div>
       </nav>
       <!-- Banner Section -->
-      <section class="w-9/10 mx-auto flex justify-between items-center">
+      <section
+        id="banner_section"
+        class="w-9/10 mx-auto flex justify-between items-center"
+      >
         <div class="flex flex-col gap-8">
           <h2 class="text-5xl font-bold">
             <span class="text-[#00BCFF]">English</span> is Easy!!
@@ -79,10 +88,21 @@
             যাবে অন্য একটি Level এ
           </p>
           <fieldset class="fieldset text-base flex flex-col gap-4">
-            <input type="email" class="input" placeholder="Enter Your Name" />
-            <input type="password" class="input" placeholder="Password" />
+            <input
+              id="name"
+              type="email"
+              class="input"
+              placeholder="Enter Your Name"
+            />
+            <input
+              id="password"
+              type="password"
+              class="input"
+              placeholder="Password"
+            />
             <div>
               <button
+                id="btn-str"
                 class="btn bg-[#422AD5] text-[#FFFFFF] text-base font-semibold p-6"
               >
                 Get Started
@@ -96,7 +116,7 @@
 
     <main>
       <!-- Vocabulary Section -->
-      <section class="w-9/10 mx-auto">
+      <section id="voca-section" class="w-9/10 mx-auto hidden">
         <h2 class="text-center text-4xl font-bold">
           <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
         </h2>
@@ -113,10 +133,86 @@
         <!-- empty message -->
         <div class="text-center p-12 bg-[#F8F8F8]">
           <p class="text-base p-4">আপনি এখনো কোন Lesson Select করেন ন</p>
-          <p class="text-4xl">একটি Lesson Select করুন।</p>
+          <p class="text-4xl font-medium">একটি Lesson Select করুন।</p>
+        </div>
+      </section>
+
+      <!-- FAQ section -->
+      <section id="fqa-section" class="w-9/10 mx-auto my-12 hidden">
+        <h3 class="font-bold text-4xl text-center my-6">
+          <span class="text-[#00BCFF]">Frequently</span> Asked Questions
+        </h3>
+        <div class="flex flex-col gap-6">
+          <div class="collapse collapse-plus bg-[#F8F8F8]">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold text-lg">
+              How do I update my profile information?
+            </div>
+            <div class="collapse-content text-base">
+              Go to "My Account" settings and select "Edit Profile" to make
+              changes.
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-[#F8F8F8]">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold text-lg">
+              How do I update my profile information?
+            </div>
+            <div class="collapse-content text-base">
+              Go to "My Account" settings and select "Edit Profile" to make
+              changes.
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-[#F8F8F8]">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold text-lg">
+              How do I update my profile information?
+            </div>
+            <div class="collapse-content text-base">
+              Go to "My Account" settings and select "Edit Profile" to make
+              changes.
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-[#F8F8F8]">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold text-lg">
+              How do I update my profile information?
+            </div>
+            <div class="collapse-content text-base">
+              Go to "My Account" settings and select "Edit Profile" to make
+              changes.
+            </div>
+          </div>
+          <div class="collapse collapse-plus bg-[#F8F8F8]">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold text-lg">
+              How do I update my profile information?
+            </div>
+            <div class="collapse-content text-base">
+              Go to "My Account" settings and select "Edit Profile" to make
+              changes.
+            </div>
+          </div>
         </div>
       </section>
     </main>
+    <footer>
+      <div class="w-9/10 mx-auto flex justify-between">
+        <div>
+          <p>English <img src="assets/logo.png" alt="" /> জানালা</p>
+          <p>ইংরেজি শিখুন সহজে</p>
+          <p>Providing ED-Tech Applications since 2025</p>
+        </div>
+        <div>
+          <p>Follow us</p>
+          <div class="flex gap-4">
+            <img src="assets/fb-thumb.png" alt="" />
+            <img src="assets/youtube-thumb.png" alt="" />
+            <img src="assets/instagram-thumb.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- modal -->
     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
       <div class="modal-box text-2xl p-12">
