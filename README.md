@@ -46,8 +46,8 @@ https://openapi.programming-hero.com/api/words/all
 
 - [#] Create a navbar with a logo and brand name on the left
 - [#] Create three buttons with icons: FAQ, Learn, and Logout
-- [ ] when clicking the FAQ button user will jump to the FAQ section
-- [ ] when clicking the Learn button user will jump to the Vocabulary section
+- [#] when clicking the FAQ button user will jump to the FAQ section
+- [#] when clicking the Learn button user will jump to the Vocabulary section
 - [ ] Navbar will be fixed at the top with a bottom border
 
 ### Banner
@@ -58,17 +58,17 @@ https://openapi.programming-hero.com/api/words/all
 
 ### FAQ Section
 
-- [ ] Create an FAQ section containing Following questions and answers as Figma
-  - [ ] the difference between `var`, `let`, and `const`
-  - [ ] the difference between `map()`, `forEach()`, and `filter()`
-  - [ ] explain arrow functions and how they are different from regular functions
-  - [ ] how JavaScript Promises work
-  - [ ] how closures work in JavaScript
+- [#] Create an FAQ section containing Following questions and answers as Figma
+  - [#] the difference between `var`, `let`, and `const`
+  - [#] the difference between `map()`, `forEach()`, and `filter()`
+  - [#] explain arrow functions and how they are different from regular functions
+  - [#] how JavaScript Promises work
+  - [#] how closures work in JavaScript
 
 ### Footer
 
-- [ ] Create a footer that includes the logo and social icons as per Figma
-- [ ] redirect users to his social profiles in a new Tab when clicking on social icons
+- [#] Create a footer that includes the logo and social icons as per Figma
+- [#] redirect users to his social profiles in a new Tab when clicking on social icons
 
 ### Vocabulary Section
 
@@ -81,7 +81,7 @@ https://openapi.programming-hero.com/api/words/all
 
 ---
 
-- [ ] Show a default text that will be displayed in the Vocabulary section initially
+- [#] Show a default text that will be displayed in the Vocabulary section initially
 - [#] on Clicking a Specific Lesson Button Load All the words from **API-02**
 - [#] Display all words for a selected lesson in a card format, showing:
   - [#] Word
@@ -90,7 +90,7 @@ https://openapi.programming-hero.com/api/words/all
 
 ---
 
-- [ ] Show **\*No Word Found** message if no words exist for a lesson
+- [#] Show **\*No Word Found** message if no words exist for a lesson
 
 ---
 
@@ -123,10 +123,10 @@ https://openapi.programming-hero.com/api/words/all
 
 ---
 
-- [ ] when clicking "Logout"
-  - [ ] hide the Navbar, Vocabulary Section, and FAQ Section
-  - [ ] show only the Banner and Footer
-- [ ] Apply smooth scrolling for FAQ & Learn buttons
+- [#] when clicking "Logout"
+  - [#] hide the Navbar, Vocabulary Section, and FAQ Section
+  - [#] show only the Banner and Footer
+- [#] Apply smooth scrolling for FAQ & Learn buttons
 
 ### Handling Invalid Data
 
