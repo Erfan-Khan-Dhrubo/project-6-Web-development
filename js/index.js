@@ -31,8 +31,7 @@ function loadVocabulary(id) {
   removeActive();
   const noVocabulary = document.getElementById("No-vocabulary");
   noVocabulary.innerHTML = "";
-  const emptyMsg = document.getElementById("empty-msg");
-  emptyMsg.innerHTML = "";
+  loadHidden("empty-msg", "dummy-class", "hidden");
   const vocabulariesContainer = document.getElementById(
     "Vocabularies-container"
   );
@@ -48,14 +47,12 @@ function loadVocabulary(id) {
     const URL = `https://openapi.programming-hero.com/api/level/${id}`;
     fetch(URL).then((response) =>
       response.json().then((info) => {
-        // const vocabulariesContainer = document.getElementById(
-        //   "Vocabularies-container"
-        // );
-        // vocabulariesContainer.innerHTML = "";
+        const noVocabulary = document.getElementById("No-vocabulary");
+        noVocabulary.innerHTML = "";
         if (info.data.length === 0) {
           const divContainer = document.createElement("div");
           divContainer.innerHTML = `
-            <div class=" bg-[#F8F8F8] flex flex-col justify-center items-center">
+            <div class=" bg-[#F8F8F8] flex flex-col justify-center items-center pb-12">
               <img src="assets/alert-error.png" alt="" />
               <p class="text-base p-4">
                 এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
@@ -70,7 +67,7 @@ function loadVocabulary(id) {
               <div class="flex flex-col gap-6 items-center bg-[#FFFFFF] rounded-lg p-12 h-full">
                 <h4 class="font-bold text-4xl">${item.word}</h4>
                 <p class="text-xl font-medium">Meaning /pronunciation</p>
-                <p class="font-semibold text-3xl text-[#18181B95]">
+                <p class="font-semibold text-xl text-[#18181B95]">
                   " ${
                     item.meaning === null ||
                     item.meaning === undefined ||
@@ -201,6 +198,14 @@ document
   .getElementById("logout-btn")
   .addEventListener("click", function (event) {
     event.preventDefault();
+    removeActive();
+    const vocabulariesContainer = document.getElementById(
+      "Vocabularies-container"
+    );
+    vocabulariesContainer.innerHTML = "";
+    const noVocabulary = document.getElementById("No-vocabulary");
+    noVocabulary.innerHTML = "";
+    loadHidden("empty-msg", "hidden", "dummy-class");
     loadHidden("voca-section", "dummy-class", "hidden");
     loadHidden("fqa-section", "dummy-class", "hidden");
     loadHidden("nav-section", "dummy-class", "hidden");
