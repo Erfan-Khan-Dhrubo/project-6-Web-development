@@ -33,43 +33,53 @@ function loadVocabulary(id) {
   noVocabulary.innerHTML = "";
   const emptyMsg = document.getElementById("empty-msg");
   emptyMsg.innerHTML = "";
+  const vocabulariesContainer = document.getElementById(
+    "Vocabularies-container"
+  );
+  vocabulariesContainer.innerHTML = "";
   const activeBtn = document.getElementById(`btn-${id}`);
   activeBtn.classList.add("active");
-  const URL = `https://openapi.programming-hero.com/api/level/${id}`;
-  fetch(URL).then((response) =>
-    response.json().then((info) => {
-      const vocabulariesContainer = document.getElementById(
-        "Vocabularies-container"
-      );
-      vocabulariesContainer.innerHTML = "";
-      if (info.data.length === 0) {
-        const divContainer = document.createElement("div");
-        divContainer.innerHTML = `
-          <div class=" bg-[#F8F8F8] flex flex-col justify-center items-center">
-            <img src="assets/alert-error.png" alt="" />
-            <p class="text-base p-4">
-              এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
-            </p>
-            <p class="text-4xl font-medium">নেক্সট Lesson এ যান</p>
-          </div>`;
-        noVocabulary.append(divContainer);
-      } else {
-        for (const item of info.data) {
+  const spinner = document.getElementById("spinner");
+  spinner.classList.remove("hidden");
+
+  setTimeout(() => {
+    spinner.classList.add("hidden"); // Hide spinner
+
+    const URL = `https://openapi.programming-hero.com/api/level/${id}`;
+    fetch(URL).then((response) =>
+      response.json().then((info) => {
+        // const vocabulariesContainer = document.getElementById(
+        //   "Vocabularies-container"
+        // );
+        // vocabulariesContainer.innerHTML = "";
+        if (info.data.length === 0) {
           const divContainer = document.createElement("div");
           divContainer.innerHTML = `
-            <div class="flex flex-col gap-6 items-center bg-[#FFFFFF] rounded-lg p-12 h-full">
-              <h4 class="font-bold text-4xl">${item.word}</h4>
-              <p class="text-xl font-medium">Meaning /pronunciation</p>
-              <p class="font-semibold text-3xl text-[#18181B95]">
-                " ${
-                  item.meaning === null ||
-                  item.meaning === undefined ||
-                  Number.isNaN(item.meaning)
-                    ? "অর্থ নেই"
-                    : item.meaning
-                }/ ${item.pronunciation}"
+            <div class=" bg-[#F8F8F8] flex flex-col justify-center items-center">
+              <img src="assets/alert-error.png" alt="" />
+              <p class="text-base p-4">
+                এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
               </p>
-              <div class="flex justify-between w-full">
+              <p class="text-4xl font-medium">নেক্সট Lesson এ যান</p>
+            </div>`;
+          noVocabulary.append(divContainer);
+        } else {
+          for (const item of info.data) {
+            const divContainer = document.createElement("div");
+            divContainer.innerHTML = `
+              <div class="flex flex-col gap-6 items-center bg-[#FFFFFF] rounded-lg p-12 h-full">
+                <h4 class="font-bold text-4xl">${item.word}</h4>
+                <p class="text-xl font-medium">Meaning /pronunciation</p>
+                <p class="font-semibold text-3xl text-[#18181B95]">
+                  " ${
+                    item.meaning === null ||
+                    item.meaning === undefined ||
+                    Number.isNaN(item.meaning)
+                      ? "অর্থ নেই"
+                      : item.meaning
+                  }/ ${item.pronunciation}"
+                </p>
+                <div class="flex justify-between w-full">
                   <div class="p-2 rounded-md bg-[#E8F3FE]">
                     <button onclick="vocabularyDetails(${item.id})">
                       <i class="fa-solid fa-circle-info text-xl"></i>
@@ -80,13 +90,14 @@ function loadVocabulary(id) {
                       <i class="fa-solid fa-volume-high text-xl"></i>
                     </button>
                   </div>
-              </div>
-            </div>`;
-          vocabulariesContainer.append(divContainer);
+                </div>
+              </div>`;
+            vocabulariesContainer.append(divContainer);
+          }
         }
-      }
-    })
-  );
+      })
+    );
+  }, 1000); // Hides spinner after 1 seconds and starts fetching
 }
 
 // removing active

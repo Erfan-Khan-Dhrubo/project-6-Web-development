@@ -135,7 +135,7 @@ https://openapi.programming-hero.com/api/words/all
 
 ### Loading Spinner
 
-- [ ] Create a loading spinner that will be display when vocabulary is loading from API
+- [#] Create a loading spinner that will be display when vocabulary is loading from API
 
 ## Optional: Be a Perfectionist
 
