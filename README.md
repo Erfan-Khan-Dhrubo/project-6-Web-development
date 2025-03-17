@@ -130,8 +130,8 @@ https://openapi.programming-hero.com/api/words/all
 
 ### Handling Invalid Data
 
-- [ ] avoid displaying falsy values like `undefined` or `null`
-- [ ] display relevant words if no data is found
+- [#] avoid displaying falsy values like `undefined` or `null`
+- [#] display relevant words if no data is found
 
 ### Loading Spinner
 

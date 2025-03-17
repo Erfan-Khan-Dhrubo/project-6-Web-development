@@ -61,7 +61,13 @@ function loadVocabulary(id) {
               <h4 class="font-bold text-4xl">${item.word}</h4>
               <p class="text-xl font-medium">Meaning /pronunciation</p>
               <p class="font-semibold text-3xl text-[#18181B95]">
-                "${item.meaning} / ${item.pronunciation}"
+                " ${
+                  item.meaning === null ||
+                  item.meaning === undefined ||
+                  Number.isNaN(item.meaning)
+                    ? "অর্থ নেই"
+                    : item.meaning
+                }/ ${item.pronunciation}"
               </p>
               <div class="flex justify-between w-full">
                   <div class="p-2 rounded-md bg-[#E8F3FE]">
@@ -104,15 +110,29 @@ function vocabularyDetails(id) {
 function loadVocabularyDetails(info) {
   loadInfo("word", info.word);
   loadInfo("pronunciation", info.pronunciation);
-  loadInfo("meaning", info.meaning);
+  loadInfo(
+    "meaning",
+    info.meaning === null ||
+      info.meaning === undefined ||
+      Number.isNaN(info.meaning)
+      ? "কোন অর্থ খুঁজে পাওয়া যায়নি"
+      : info.meaning
+  );
   loadInfo("sentence", info.sentence);
   const targetId = document.getElementById("synonyms");
   targetId.innerHTML = "";
-  for (const item of info.synonyms) {
+  if (info.synonyms.length === 0) {
     const newDiv = document.createElement("div");
     newDiv.innerHTML = `
-     <p class="text-xl bg-[#EDF7FF] p-2 rounded-lg">${item}</p>`;
+       <p class="text-xl bg-[#EDF7FF] p-2 rounded-lg">কোনো সমার্থক শব্দ পাওয়া যায়নি</p>`;
     targetId.append(newDiv);
+  } else {
+    for (const item of info.synonyms) {
+      const newDiv = document.createElement("div");
+      newDiv.innerHTML = `
+       <p class="text-xl bg-[#EDF7FF] p-2 rounded-lg">${item}</p>`;
+      targetId.append(newDiv);
+    }
   }
   my_modal_5.showModal();
 }
@@ -137,10 +157,10 @@ document.getElementById("btn-str").addEventListener("click", function (event) {
       loadHidden("banner_section", "dummy-class", "hidden");
     } else {
       console.log(password);
-      swal("Invalid Password");
+      swal("Wrong Password! Contact admin to get your Login Code");
     }
   } else {
-    swal("Please Write Your Name");
+    swal("Please Write Your Name First");
   }
 });
 
