@@ -46,9 +46,11 @@
       <!-- navbar section -->
       <nav
         id="nav-section"
-        class="bg-[#F3F3F3] border-2 border-gray-300 hidden fixed top-0 w-full z-40"
+        class="bg-[#F3F3F3] border-2 border-gray-300 fixed top-0 w-full z-40"
       >
-        <div class="w-9/10 flex mx-auto justify-between py-6">
+        <div
+          class="w-9/10 flex flex-col md:flex-row mx-auto justify-between py-6 gap-6"
+        >
           <div class="flex items-center gap-1">
             <div class="font-semibold text-xl">English</div>
             <div><img src="assets/logo.png" alt="" /></div>
@@ -131,15 +133,15 @@
       <!-- Vocabulary Section -->
       <section
         id="voca-section"
-        class="w-9/10 mx-auto hidden pt-[120px] mt-[50px]"
+        class="w-9/10 mx-auto md:pt-[120px] pt-[180px] mt-[50px]"
       >
-        <h2 class="text-center text-4xl font-bold">
+        <h2 class="text-center md:text-4xl text-2xl font-bold">
           <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
         </h2>
         <!-- button -->
         <div
           id="Lesson-container"
-          class="flex justify-center gap-4 py-12"
+          class="grid grid-cols-2 md:flex justify-center gap-4 py-12"
         ></div>
         <div
           id="spinner"
@@ -160,26 +162,28 @@
         <!-- Vocabulary  -->
         <div
           id="Vocabularies-container"
-          class="grid grid-cols-3 bg-[#F8F8F8] gap-6 p-8"
+          class="grid md:grid-cols-3 bg-[#F8F8F8] gap-6 md:p-8 p-1"
         ></div>
         <!-- No vocabulary msg -->
         <div id="No-vocabulary"></div>
         <!-- empty message -->
         <div
           id="empty-msg"
-          class="pb-16 bg-[#F8F8F8] flex flex-col justify-center items-center"
+          class="pb-16 bg-[#F8F8F8] flex flex-col justify-center items-center gap-2"
         >
-          <p class="text-base p-4">আপনি এখনো কোন Lesson Select করেন ন</p>
-          <p class="text-4xl font-medium">একটি Lesson Select করুন।</p>
+          <p class="text-base md:p-4">আপনি এখনো কোন Lesson Select করেন ন</p>
+          <p class="md:text-4xl text-2xl font-medium">
+            একটি Lesson Select করুন।
+          </p>
         </div>
       </section>
 
       <!-- FAQ section -->
       <section
         id="fqa-section"
-        class="w-9/10 mx-auto pt-[100px] mb-16 py-12 hidden"
+        class="w-9/10 mx-auto md:pt-[100px] pt-[150px] mb-16 py-12 hidden"
       >
-        <h3 class="font-bold text-4xl text-center my-6">
+        <h3 class="font-bold md:text-4xl text-2xl text-center my-6">
           <span class="text-[#00BCFF]">Frequently</span> Asked Questions
         </h3>
         <div class="flex flex-col gap-6">
@@ -287,7 +291,7 @@
     </footer>
     <!-- modal -->
     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-      <div class="modal-box text-2xl p-12">
+      <div class="modal-box text-2xl md:p-12 p-4">
         <div class="flex flex-col gap-6">
           <h3 class="text-4xl font-semibold">
             <span id="word"></span> ( <i class="fa-solid fa-microphone"></i> :

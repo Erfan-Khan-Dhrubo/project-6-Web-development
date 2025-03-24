@@ -54,17 +54,17 @@ function loadVocabulary(id) {
           divContainer.innerHTML = `
             <div class=" bg-[#F8F8F8] flex flex-col justify-center items-center pb-12">
               <img src="assets/alert-error.png" alt="" />
-              <p class="text-base p-4">
+              <p class="text-base md:p-4">
                 এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
               </p>
-              <p class="text-4xl font-medium">নেক্সট Lesson এ যান</p>
+              <p class="md:text-4xl text-2xl font-medium">নেক্সট Lesson এ যান</p>
             </div>`;
           noVocabulary.append(divContainer);
         } else {
           for (const item of info.data) {
             const divContainer = document.createElement("div");
             divContainer.innerHTML = `
-              <div class="flex flex-col gap-6 items-center bg-[#FFFFFF] rounded-lg p-12 h-full">
+              <div class="flex flex-col gap-6 items-center bg-[#FFFFFF] rounded-lg md:p-12 p-4 h-full">
                 <h4 class="font-bold text-4xl">${item.word}</h4>
                 <p class="text-xl font-medium">Meaning /pronunciation</p>
                 <p class="font-semibold text-xl text-[#18181B95]">
