@@ -83,7 +83,7 @@ function loadVocabulary(id) {
                     </button>
                   </div>
                   <div class="p-2 rounded-md bg-[#E8F3FE]">
-                    <button>
+                    <button onclick="pronounceWord('${item.word}')">
                       <i class="fa-solid fa-volume-high text-xl"></i>
                     </button>
                   </div>
@@ -210,4 +210,13 @@ document
     loadHidden("fqa-section", "dummy-class", "hidden");
     loadHidden("nav-section", "dummy-class", "hidden");
     loadHidden("banner_section", "hidden", "dummy-class");
+    swal("Good job!", "Logout Successfully ", "success");
   });
+
+//  voice pronunciation of vocabulary words
+
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
