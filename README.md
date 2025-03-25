@@ -105,3 +105,23 @@ Whether you're brushing up your vocabulary or experimenting with API-driven feat
    git clone https://github.com/Erfan-Khan-Dhrubo/project-6-Web-development.git
 
    ```
+
+## A visual representation of my page.
+
+<img src="./webpage pic/home.png"/>
+
+<hr>
+
+<img src="./webpage pic/pic 1.png"/>
+
+<hr>
+
+<img src="./webpage pic/pic 2.png"/>
+
+<hr>
+
+<img src="./webpage pic/pic 3.png"/>
+
+<hr>
+
+<img src="./webpage pic/pic 4.png"/>
